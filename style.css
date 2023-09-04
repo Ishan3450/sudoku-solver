@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* borders pre classes */
+
+.border-dotted-left{
+  border-left: 2px dotted black;
+}
+.border-dotted-right{
+  border-right: 2px dotted black;
+}
+.border-dotted-top{
+  border-top: 2px dotted black;
+}
+.border-dotted-bottom{
+  border-bottom: 2px dotted black;
+}
+.border-dotted-all{
+  border: 2px dotted black;
+}
+
+.border-solid-left{
+  border-left: 2px solid black;
+}
+.border-solid-right{
+  border-right: 2px solid black;
+}
+.border-solid-top{
+  border-top: 2px solid black;
+}
+.border-solid-bottom{
+  border-bottom: 2px solid black;
+}
