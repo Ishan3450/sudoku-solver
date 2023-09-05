@@ -31,11 +31,11 @@ let grid = [
 ];
 
 function handleKeyUp(event, i) {
-  if (i + 1 <= 81 && event.key >= "0" && event.key <= "9") {
+  if (i + 1 <= 81 && event.key >= "1" && event.key <= "9") {
     let destination = inputFields[i].id.split("-");
     let row = destination[1],
       col = destination[2];
-    grid[row][col] = inputFields[i].value;
+    grid[row][col] = Number(inputFields[i].value);
 
     // after storing the value transfer the focus to the next input field only if it is not the very last cell
     if (i + 1 < 81) {
@@ -48,7 +48,7 @@ function handleKeyUp(event, i) {
 
 function handleKeyDown(event, i) {
   if (
-    event.key >= "0" &&
+    event.key >= "1" &&
     event.key <= "9" &&
     inputFields[i].value.length >= 1
   ) {
@@ -85,6 +85,7 @@ function updateUI() {
       inputFields[idx++].value = grid[row][col] == -1 ? "" : grid[row][col];
     }
   }
+  instructionsField.textContent = "UI updated";
 }
 
 function resetGrid() {
@@ -123,26 +124,79 @@ function getFocusedField() {
   return -1;
 }
 
-function solveSudoku() {}
+// * solves the full sudoku
+function solveSudoku() {
+  for (let row = 0; row < 9; row++) {
+    for (let col = 0; col < 9; col++) {
+      if (grid[row][col] === -1) {
+        for (let val = 0; val <= 9; val++) {
+          if (checkCell(row, col, val)) {
+            grid[row][col] = val;
+
+            if (solveSudoku()) {
+              return true;
+            }
+
+            grid[row][col] = -1;
+          }
+        }
+        return false;
+      } else{
+        if(!checkCell(row, col, grid[row][col])){
+          return false;
+        }
+      }
+    }
+  }
+  return true;
+}
+
+solveFullBtn.addEventListener("click", () => {
+  if (solveSudoku()) {
+    console.log(grid);
+    updateUI();
+    instructionsField.textContent = "Sudoku solved";
+  } else {
+    instructionsField.textContent = "Invalid value of cells provided";
+  }
+});
 
 function solveCell(row, col, idx) {
-  for(let val = 0; val <= 9; val ++){
-    if(checkCell(row, col, idx, val)){
+  for (let val = 1; val <= 9; val++) {
+    console.log(checkCell(row, col, val) + " for " + val);
+    if (checkCell(row, col, val)) {
       grid[row][col] = val;
       inputFields[idx].value = val;
-      instructionsField.textContent = `Cell R${Number(row)+1}-C${Number(col)+1} solved with value ${val}`;
+      instructionsField.textContent = `Cell R${Number(row) + 1}-C${
+        Number(col) + 1
+      } solved with value ${val}`;
       return;
     }
   }
   instructionsField.textContent = "Cell not solved, change previous cells";
 }
 
-solveCellBtn.addEventListener('mousedown', () => {
-  const field =  getFocusedField();
+solveCellBtn.addEventListener("mousedown", () => {
+  const field = getFocusedField();
   solveCell(field.row, field.col, field.index);
-})
+});
 
-function checkSudoku() {}
+function checkSudoku() {
+  let idx = 0;
+  for(let row = 0; row < 9; row ++){
+    for(let col = 0; col < 9; col ++){
+      if(grid[row][col] != -1 && !checkCell(row, col, grid[row][col])){
+        instructionsField.textContent = `First invalid cell R${row+1}-C${col+1} found`;
+        inputFields[idx].focus();
+        return;
+      }
+      idx ++;
+    }
+  }
+  instructionsField.textContent = "Sudoku is valid"
+}
+
+checkFullBtn.addEventListener('click', checkSudoku)
 
 function checkCell(row, col, value) {
   // check curr row
@@ -178,13 +232,19 @@ checkCellBtn.addEventListener("mousedown", () => {
   // getFocusedFieldIdx() returns the focused field's object or -1 is not focused any
   const field = getFocusedField();
 
-  if (field !== -1) {
+  if (inputFields[field.index].value == "") {
+    instructionsField.textContent = "Cell is empty, first place a value in it";
+  } else if (field !== -1) {
     let ans = checkCell(field.row, field.col, field.value);
 
     if (ans) {
-      instructionsField.textContent = `Cell R${Number(field.row)+1}-C${Number(field.col)+1} contains valid value`
+      instructionsField.textContent = `Cell R${Number(field.row) + 1}-C${
+        Number(field.col) + 1
+      } contains valid value`;
     } else {
-      instructionsField.textContent = `Cell R${Number(field.row)+1}-C${Number(field.col)+1} contains an invalid value`
+      instructionsField.textContent = `Cell R${Number(field.row) + 1}-C${
+        Number(field.col) + 1
+      } contains an invalid value`;
     }
   }
 });
