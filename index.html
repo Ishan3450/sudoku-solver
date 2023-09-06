@@ -6,9 +6,9 @@
     <title>Ishan's Sudoku Solver</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
+  <body class="sm:overflow-hidden box-border">
     <div
-      class="h-[100vh] w-[100vw] flex flex-col items-center justify-between py-5"
+      class="h-[100vh] w-[100vw] flex flex-col items-center justify-between p-5 gap-8 md:gap-0 mx-5"
     >
     <div>
       <h1 class="text-3xl font-semibold text-center">Ishan's Sudoku Solver</h1>
@@ -16,138 +16,139 @@
         Start to solve with a single cell and also use check button. <br> (Use <kbd class="bg-gray-200 px-1 rounded">tab</kbd> key to transfer focus to next cell)
       </p>
     </div>
+    <div class="w-[400px] h-[400px] ">
       <div class="mainGrid grid grid-cols-10 grid-rows-10">
-          <!-- row - 0 starts -->
-          <div class="text-center mb-1"></div>
-          <div class="text-center text-lg mb-1">C1</div>
-          <div class="text-center text-lg mb-1">C2</div>
-          <div class="text-center text-lg mb-1">C3</div>
-          <div class="text-center text-lg mb-1">C4</div>
-          <div class="text-center text-lg mb-1">C5</div>
-          <div class="text-center text-lg mb-1">C6</div>
-          <div class="text-center text-lg mb-1">C7</div>
-          <div class="text-center text-lg mb-1">C8</div>
-          <div class="text-center text-lg mb-1">C9</div>
-          <!-- row - 0 ends -->
+        <!-- row - 0 starts -->
+        <div class="text-center mb-1"></div>
+        <div class="text-center text-lg mb-1">C1</div>
+        <div class="text-center text-lg mb-1">C2</div>
+        <div class="text-center text-lg mb-1">C3</div>
+        <div class="text-center text-lg mb-1">C4</div>
+        <div class="text-center text-lg mb-1">C5</div>
+        <div class="text-center text-lg mb-1">C6</div>
+        <div class="text-center text-lg mb-1">C7</div>
+        <div class="text-center text-lg mb-1">C8</div>
+        <div class="text-center text-lg mb-1">C9</div>
+        <!-- row - 0 ends -->
 
-          <!-- row - 1 starts -->
-          <div class="text-center text-lg my-auto">R1</div>          
-          <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-top border-solid-left"></div>
-          <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-top border-dotted-left border-dotted-right"></div>
-          <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-top border-solid-right"></div>
-          <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-top"></div>
-          <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-top border-dotted-left border-dotted-right"></div>
-          <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-top border-solid-right"></div>
-          <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-top"></div>
-          <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-top border-dotted-left border-dotted-right"></div>
-          <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-top border-solid-right"></div>
-          <!-- row - 1 end -->
+        <!-- row - 1 starts -->
+        <div class="text-center text-lg my-auto">R1</div>          
+        <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-top border-solid-left"></div>
+        <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-top border-dotted-left border-dotted-right"></div>
+        <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-top border-solid-right"></div>
+        <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-top"></div>
+        <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-top border-dotted-left border-dotted-right"></div>
+        <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-top border-solid-right"></div>
+        <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-top"></div>
+        <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-top border-dotted-left border-dotted-right"></div>
+        <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-top border-solid-right"></div>
+        <!-- row - 1 end -->
 
-          <!-- row - 2 starts -->
-          <div class="text-center text-lg my-auto">R2</div>
-          <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-left border-dotted-top border-dotted-bottom"></div>
-          <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-dotted-all"></div>
-          <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-right border-dotted-top border-dotted-bottom"></div>
-          <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-dotted-top border-dotted-bottom"></div>
-          <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-dotted-all"></div>
-          <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-right border-dotted-top border-dotted-bottom"></div>
-          <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-dotted-top border-dotted-bottom"></div>
-          <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-dotted-all"></div>
-          <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-right border-dotted-top border-dotted-bottom"></div>
-          <!-- row - 2 end -->
+        <!-- row - 2 starts -->
+        <div class="text-center text-lg my-auto">R2</div>
+        <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-left border-dotted-top border-dotted-bottom"></div>
+        <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-dotted-all"></div>
+        <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-right border-dotted-top border-dotted-bottom"></div>
+        <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-dotted-top border-dotted-bottom"></div>
+        <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-dotted-all"></div>
+        <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-right border-dotted-top border-dotted-bottom"></div>
+        <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-dotted-top border-dotted-bottom"></div>
+        <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-dotted-all"></div>
+        <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-right border-dotted-top border-dotted-bottom"></div>
+        <!-- row - 2 end -->
 
-          <!-- row - 3 starts -->
-          <div class="text-center text-lg my-auto">R3</div>
-          <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-left border-solid-bottom"></div>
-          <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-bottom border-dotted-left border-dotted-right"></div>
-          <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-bottom border-solid-right"></div>
-          <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-bottom"></div>
-          <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-bottom border-dotted-left border-dotted-right"></div>
-          <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-bottom border-solid-right"></div>
-          <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-bottom"></div>
-          <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-bottom border-dotted-left border-dotted-right"></div>
-          <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-bottom border-solid-right"></div>
-          <!-- row - 3 end -->
+        <!-- row - 3 starts -->
+        <div class="text-center text-lg my-auto">R3</div>
+        <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-left border-solid-bottom"></div>
+        <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-bottom border-dotted-left border-dotted-right"></div>
+        <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-bottom border-solid-right"></div>
+        <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-bottom"></div>
+        <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-bottom border-dotted-left border-dotted-right"></div>
+        <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-bottom border-solid-right"></div>
+        <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-bottom"></div>
+        <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-bottom border-dotted-left border-dotted-right"></div>
+        <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-bottom border-solid-right"></div>
+        <!-- row - 3 end -->
 
-          <!-- row - 4 starts -->
-          <div class="text-center text-lg my-auto">R4</div>
-          <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-left"></div>
-          <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-dotted-left border-dotted-right"></div>
-          <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-right"></div>
-          <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] "></div>
-          <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-dotted-left border-dotted-right"></div>
-          <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-right"></div>
-          <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] "></div>
-          <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-dotted-left border-dotted-right"></div>
-          <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-right"></div>
-          <!-- row - 4 end -->
+        <!-- row - 4 starts -->
+        <div class="text-center text-lg my-auto">R4</div>
+        <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-left"></div>
+        <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-dotted-left border-dotted-right"></div>
+        <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-right"></div>
+        <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] "></div>
+        <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-dotted-left border-dotted-right"></div>
+        <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-right"></div>
+        <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] "></div>
+        <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-dotted-left border-dotted-right"></div>
+        <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-right"></div>
+        <!-- row - 4 end -->
 
-          <!-- row - 5 starts -->
-          <div class="text-center text-lg my-auto">R5</div>
-          <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-left border-dotted-top border-dotted-bottom"></div>
-          <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-dotted-all"></div>
-          <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-right border-dotted-top border-dotted-bottom"></div>
-          <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-dotted-top border-dotted-bottom"></div>
-          <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-dotted-all"></div>
-          <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-right border-dotted-top border-dotted-bottom"></div>
-          <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-dotted-top border-dotted-bottom"></div>
-          <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-dotted-all"></div>
-          <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-right border-dotted-top border-dotted-bottom"></div>
-          <!-- row - 5 end -->
+        <!-- row - 5 starts -->
+        <div class="text-center text-lg my-auto">R5</div>
+        <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-left border-dotted-top border-dotted-bottom"></div>
+        <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-dotted-all"></div>
+        <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-right border-dotted-top border-dotted-bottom"></div>
+        <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-dotted-top border-dotted-bottom"></div>
+        <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-dotted-all"></div>
+        <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-right border-dotted-top border-dotted-bottom"></div>
+        <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-dotted-top border-dotted-bottom"></div>
+        <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-dotted-all"></div>
+        <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-right border-dotted-top border-dotted-bottom"></div>
+        <!-- row - 5 end -->
 
-          <!-- row - 6 starts -->
-          <div class="text-center text-lg my-auto">R6</div>
-          <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-left border-solid-bottom"></div>
-          <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-bottom border-dotted-left border-dotted-right"></div>
-          <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-bottom border-solid-right"></div>
-          <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-bottom"></div>
-          <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-bottom border-dotted-left border-dotted-right"></div>
-          <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-bottom border-solid-right"></div>
-          <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-bottom"></div>
-          <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-bottom border-dotted-left border-dotted-right"></div>
-          <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-bottom border-solid-right"></div>
-          <!-- row - 6 end -->
+        <!-- row - 6 starts -->
+        <div class="text-center text-lg my-auto">R6</div>
+        <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-left border-solid-bottom"></div>
+        <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-bottom border-dotted-left border-dotted-right"></div>
+        <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-bottom border-solid-right"></div>
+        <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-bottom"></div>
+        <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-bottom border-dotted-left border-dotted-right"></div>
+        <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-bottom border-solid-right"></div>
+        <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-bottom"></div>
+        <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-bottom border-dotted-left border-dotted-right"></div>
+        <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-bottom border-solid-right"></div>
+        <!-- row - 6 end -->
 
-          <!-- row - 7 starts -->
-          <div class="text-center text-lg my-auto">R7</div>
-          <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-left"></div>
-          <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-dotted-left border-dotted-right"></div>
-          <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-right"></div>
-          <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] "></div>
-          <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-dotted-left border-dotted-right"></div>
-          <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-right"></div>
-          <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] "></div>
-          <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-dotted-left border-dotted-right"></div>
-          <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-right"></div>
-          <!-- row - 7 end -->
+        <!-- row - 7 starts -->
+        <div class="text-center text-lg my-auto">R7</div>
+        <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-left"></div>
+        <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-dotted-left border-dotted-right"></div>
+        <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-right"></div>
+        <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] "></div>
+        <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-dotted-left border-dotted-right"></div>
+        <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-right"></div>
+        <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] "></div>
+        <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-dotted-left border-dotted-right"></div>
+        <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-right"></div>
+        <!-- row - 7 end -->
 
-          <!-- row - 8 starts -->
-          <div class="text-center text-lg my-auto">R8</div>
-          <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-left border-dotted-top border-dotted-bottom"></div>
-          <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-dotted-all"></div>
-          <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-right border-dotted-top border-dotted-bottom"></div>
-          <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-dotted-top border-dotted-bottom"></div>
-          <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-dotted-all"></div>
-          <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-right border-dotted-top border-dotted-bottom"></div>
-          <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-dotted-top border-dotted-bottom"></div>
-          <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-dotted-all"></div>
-          <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-right border-dotted-top border-dotted-bottom"></div>
-          <!-- row - 8 end -->
+        <!-- row - 8 starts -->
+        <div class="text-center text-lg my-auto">R8</div>
+        <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-left border-dotted-top border-dotted-bottom"></div>
+        <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-dotted-all"></div>
+        <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-right border-dotted-top border-dotted-bottom"></div>
+        <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-dotted-top border-dotted-bottom"></div>
+        <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-dotted-all"></div>
+        <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-right border-dotted-top border-dotted-bottom"></div>
+        <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-dotted-top border-dotted-bottom"></div>
+        <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-dotted-all"></div>
+        <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-right border-dotted-top border-dotted-bottom"></div>
+        <!-- row - 8 end -->
 
-          <!-- row - 9 starts -->
-          <div class="text-center text-lg my-auto">R9</div>
-          <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-left border-solid-bottom"></div>
-          <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-bottom border-dotted-left border-dotted-right"></div>
-          <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-bottom border-solid-right"></div>
-          <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-bottom"></div>
-          <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-bottom border-dotted-left border-dotted-right"></div>
-          <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-bottom border-solid-right"></div>
-          <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-bottom"></div>
-          <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-bottom border-dotted-left border-dotted-right"></div>
-          <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-bottom border-solid-right"></div>
-          <!-- row - 9 end -->
-
+        <!-- row - 9 starts -->
+        <div class="text-center text-lg my-auto">R9</div>
+        <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-left border-solid-bottom"></div>
+        <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-bottom border-dotted-left border-dotted-right"></div>
+        <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-bottom border-solid-right"></div>
+        <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-bottom"></div>
+        <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-bottom border-dotted-left border-dotted-right"></div>
+        <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-bottom border-solid-right"></div>
+        <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-bottom"></div>
+        <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-bottom border-dotted-left border-dotted-right"></div>
+        <div><input type="number" min="1" max="9" class="text-center text-xl w-[40px] h-[40px] border-solid-bottom border-solid-right"></div>
+        <!-- row - 9 end -->
       </div>
+    </div>
       
       <div class="bg-blue-100 border-l-4 border-blue-500 text-blue-700 px-8 py-2 rounded-r">
         <p id="instructions">Instructions regarding sudoku will be shown here</p>

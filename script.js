@@ -54,6 +54,10 @@ function handleKeyDown(event, i) {
   ) {
     inputFields[i].value = "";
   }
+
+  // on 
+  const destination = inputFields[i].id.split("-");
+  grid[destination[1]][destination[2]] = -1;
 }
 
 function init() {

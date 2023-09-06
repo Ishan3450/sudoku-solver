@@ -41,3 +41,11 @@ input[type="number"] {
 .border-solid-bottom{
   border-bottom: 2px solid black;
 }
+
+/* grid cell */
+/* input{
+  min-height: 40px;
+  max-height: 40px;
+  min-width: 40px;
+  max-width: 40px;
+} */
